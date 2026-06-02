@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 43 60% 90%;
+    --card: 30 20% 6%;
+    --card-foreground: 43 60% 90%;
+    --popover: 30 20% 6%;
+    --popover-foreground: 43 60% 90%;
+    --primary: 43 65% 52%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 30 15% 12%;
+    --secondary-foreground: 43 60% 90%;
+    --muted: 30 10% 15%;
+    --muted-foreground: 43 30% 60%;
+    --accent: 43 65% 52%;
+    --accent-foreground: 0 0% 2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 30% 20%;
+    --input: 43 30% 20%;
+    --ring: 43 65% 52%;
+    --radius: 0.625rem;
+    
+    --gold-deep: #1a1410;
+    --gold-champagne: #d4af37;
+    --gold-soft: #f3e5ab;
+    --gold-muted: #c5b358;
+    --deep-void: #050505;
+    --warm-ivory: #faf6ef;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#050505] text-foreground;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background: rgba(212, 175, 55, 0.3);
+    color: #f3e5ab;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #c5b358 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-luxury {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    background: rgba(10, 10, 10, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+  
+  .glass-luxury-strong {
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    background: rgba(10, 10, 10, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+  }
+  
+  .border-gold-glow {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1), inset 0 0 20px rgba(212, 175, 55, 0.05);
+  }
+  
+  .hover-gold-fill {
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .hover-gold-fill:hover {
+    background: linear-gradient(135deg, #d4af37 0%, #c5b358 100%);
+    color: #050505;
+    border-color: transparent;
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+  
+  .text-shadow-gold {
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.3), 0 2px 10px rgba(0,0,0,0.8);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}
