@@ -1,4 +1,5 @@
-import { Crown, Instagram, Linkedin, Twitter, Mail, MapPin } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Mail, MapPin } from 'lucide-react';
+import logoImg from '../Logo/Logo.png';
 
 const socialLinks = [
   { icon: Instagram, href: '#', label: 'Instagram' },
@@ -37,7 +38,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Crown className="w-6 h-6 text-gold-champagne" />
+              <img
+                src={logoImg}
+                alt="ELEV8 Logo"
+                className="w-10 h-10 rounded-full object-cover border border-gold-champagne/40"
+              />
               <span className="text-lg font-bold tracking-[0.15em] text-white uppercase">
                 ELEV8
               </span>

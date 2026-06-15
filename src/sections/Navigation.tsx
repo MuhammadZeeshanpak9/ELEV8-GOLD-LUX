@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Crown, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logoImg from '../Logo/Logo.png';
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +37,11 @@ export default function Navigation() {
           href="#"
           className="flex items-center gap-3 group"
         >
-          <Crown className="w-7 h-7 text-gold-champagne transition-transform duration-500 group-hover:scale-110" />
+          <img
+            src={logoImg}
+            alt="ELEV8 Logo"
+            className="w-10 h-10 rounded-full object-cover border border-gold-champagne/40 transition-transform duration-500 group-hover:scale-110"
+          />
           <span className="text-lg font-bold tracking-[0.15em] text-white uppercase">
             ELEV8
           </span>
